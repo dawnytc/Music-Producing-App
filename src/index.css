@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-music-bg text-music-text font-sans;
+  }
+}
+
+@layer components {
+  .timeline-grid {
+    background-image: 
+      linear-gradient(to right, #4b5563 1px, transparent 1px),
+      linear-gradient(to bottom, #4b5563 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  
+  .instrument-button {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  .timeline-cell {
+    @apply border border-music-surface hover:border-music-primary transition-colors duration-200 cursor-pointer;
+  }
+  
+  .timeline-cell.active {
+    @apply bg-music-primary/20 border-music-primary;
+  }
+
+  /* Soft Gradient 3D Cube Logo Styles */
+  .cube-container {
+    perspective: 1200px;
+    perspective-origin: center center;
+  }
+
+  .cube {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    transform-style: preserve-3d;
+    animation: gentleRotate 10s infinite ease-in-out;
+  }
+
+  .face {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    box-shadow: 
+      inset 0 0 30px rgba(255, 255, 255, 0.1),
+      0 4px 20px rgba(0, 0, 0, 0.1),
+      0 0 40px rgba(99, 102, 241, 0.1);
+  }
+
+  .front {
+    transform: rotateY(0deg) translateZ(35px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .back {
+    transform: rotateY(180deg) translateZ(35px);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+
+  .right {
+    transform: rotateY(90deg) translateZ(35px);
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+
+  .left {
+    transform: rotateY(-90deg) translateZ(35px);
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+
+  .top {
+    transform: rotateX(90deg) translateZ(35px);
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  }
+
+  .bottom {
+    transform: rotateX(-90deg) translateZ(35px);
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  }
+
+  @keyframes gentleRotate {
+    0% {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    25% {
+      transform: rotateX(15deg) rotateY(90deg) rotateZ(5deg);
+    }
+    50% {
+      transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+    }
+    75% {
+      transform: rotateX(-15deg) rotateY(270deg) rotateZ(-5deg);
+    }
+    100% {
+      transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+    }
+  }
+}

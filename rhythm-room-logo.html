@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Room - Soft Gradient Cube Logo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #e5e5e5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Soft Gradient 3D Cube Logo Styles */
+        .cube-container {
+            perspective: 1200px;
+            perspective-origin: center center;
+            margin-right: 2rem;
+        }
+
+        .cube {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            transform-style: preserve-3d;
+            animation: gentleRotate 10s infinite ease-in-out;
+        }
+
+        .face {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            box-shadow: 
+                inset 0 0 30px rgba(255, 255, 255, 0.1),
+                0 4px 20px rgba(0, 0, 0, 0.2),
+                0 0 40px rgba(99, 102, 241, 0.1);
+        }
+
+        .front {
+            transform: rotateY(0deg) translateZ(40px);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .back {
+            transform: rotateY(180deg) translateZ(40px);
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .right {
+            transform: rotateY(90deg) translateZ(40px);
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .left {
+            transform: rotateY(-90deg) translateZ(40px);
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .top {
+            transform: rotateX(90deg) translateZ(40px);
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .bottom {
+            transform: rotateX(-90deg) translateZ(40px);
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        @keyframes gentleRotate {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+            }
+            25% {
+                transform: rotateX(15deg) rotateY(90deg) rotateZ(5deg);
+            }
+            50% {
+                transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);
+            }
+            75% {
+                transform: rotateX(-15deg) rotateY(270deg) rotateZ(-5deg);
+            }
+            100% {
+                transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+            }
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #4facfe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-top: 1rem;
+            font-weight: 300;
+        }
+
+        .description {
+            max-width: 600px;
+            margin: 2rem auto;
+            line-height: 1.6;
+            color: #c0c0c0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .cube-container {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <!-- Soft Gradient 3D Cube Logo -->
+            <div class="cube-container">
+                <div class="cube">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                </div>
+            </div>
+            <h1 class="title">Rhythm Room</h1>
+        </div>
+        
+        <p class="subtitle">Create your first beat with this beginner-friendly music app</p>
+        
+        <div class="description">
+            <p>Welcome to Rhythm Room, where creativity meets technology. Our soft gradient cube logo represents the harmonious blend of musical elements - each face symbolizes a different aspect of music production, from rhythm to melody, from creativity to precision.</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🎵 Musical Creativity</h3>
+                <p>The flowing gradients suggest musical harmony and creative expression.</p>
+            </div>
+            <div class="feature">
+                <h3>🎨 Visual Appeal</h3>
+                <p>Soft, elegant colors that convey professionalism and artistic sensibility.</p>
+            </div>
+            <div class="feature">
+                <h3>⚡ Dynamic Motion</h3>
+                <p>Gentle rotation keeps the logo engaging while maintaining sophistication.</p>
+            </div>
+            <div class="feature">
+                <h3>🎯 Brand Identity</h3>
+                <p>Unique, memorable design that stands out in the music production space.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
